@@ -1,4 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="s" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@ page session="false" %>
 <html>
 <head>
@@ -20,6 +22,7 @@
 <div id="tabs">
 	<ul>
 		<li><a href="#simple">Simple</a></li>
+		<li><a href="#broker">Broker Details</a></li>
     </ul>
     <div id="simple">
 		<h2>Simple</h2>
@@ -35,6 +38,19 @@
 			</li>
 		</ul>
 	</div>
+    <div id="broker">
+		<h2>Broker</h2>
+		<p>
+			Enter Bank account number and get Broker Details :
+		</p>
+		
+		<ul>
+			<li>
+				<a id="simpleLink" class="brokerLink" href="<c:url value="/broker" />">GET Broker</a>
+			</li>
+    	</ul>
+			
+	</div>
 	
 </div>
 <script type="text/javascript" src="<c:url value="/resources/jquery/1.6/jquery.js" />"></script>
@@ -46,7 +62,6 @@
 <script>
 	MvcUtil = {};
 	MvcUtil.showSuccessResponse = function (text, element) {
-		alert(element);
 		MvcUtil.showResponse("success", text, element);
 	};
 	MvcUtil.showErrorResponse = function showErrorResponse(text, element) {
@@ -93,7 +108,6 @@ $(document).ready(function() {
 
 	$("a.textLink").click(function(){
 		var link = $(this);
-		alert(link.attr("href"));
 		$.ajax({ url: link.attr("href"), dataType: "text", success: function(text) { MvcUtil.showSuccessResponse(text, link); }, error: function(xhr) { MvcUtil.showErrorResponse(xhr.responseText, link); }});
 		return false;
 	});
