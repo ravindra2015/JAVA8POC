@@ -23,6 +23,7 @@
 	<ul>
 		<li><a href="#simple">Simple</a></li>
 		<li><a href="#broker">Broker Details</a></li>
+		<li><a href="<c:url value="/existanceCase" />" title="existanceCase">Case Details</a></li>
     </ul>
     <div id="simple">
 		<h2>Simple</h2>
