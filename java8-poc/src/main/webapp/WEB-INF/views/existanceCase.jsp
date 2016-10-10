@@ -13,7 +13,7 @@
 </c:if>
 	<div id="formsContent">
 		<h2>Case Details</h2>
-		<form:form id="form" method="post" modelAttribute="existanceCaseBean" cssClass="cleanform">
+		<form:form id="form" method="post" action="save.html" modelAttribute="existanceCaseBean" cssClass="cleanform">
 			<div class="header">
 
 		  		<c:if test="${not empty message}">

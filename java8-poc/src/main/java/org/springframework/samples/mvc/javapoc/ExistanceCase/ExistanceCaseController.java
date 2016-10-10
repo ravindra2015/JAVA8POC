@@ -66,7 +66,8 @@ public class ExistanceCaseController {
 			// store a success message for rendering on the next request after redirect
 			// redirect back to the form to render the success message along with newly bound values
 			redirectAttrs.addFlashAttribute("message", message);
-			return "redirect:/existanceCase";			
+//			return "redirect:/existanceCase";	
+			return "redirect:/save";
 		}
 	}
 	
