@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.validation.Valid;
+import javax.xml.parsers.ParserConfigurationException;
 
 import org.springframework.mvc.extensions.ajax.AjaxUtils;
 import org.springframework.stereotype.Controller;
@@ -49,11 +50,13 @@ public class BrokerController {
 		}
 		
 		List countryList = new ArrayList();
-		countryList.add("India");
-		countryList.add("Australia");
-		countryList.add("England");
 		
-		
+		try {
+			countryList=XmlParser.getBrokers(formBean.getAccountNo());
+		} catch (ParserConfigurationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		// Typically you would save to a db and clear the "form" attribute from the session 
 		// via SessionStatus.setCompleted(). For the demo we leave it in the session.
 		String message = "Form submitted successfully.  Bound " + formBean;
