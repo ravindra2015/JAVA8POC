@@ -8,7 +8,7 @@
 <body>
 
 <h2>Spring MVC Multiple Row Form Submit example</h2>
-<form:form method="post" action="save.html" modelAttribute="casesForm">
+<form:form method="post" action="listPage.html" modelAttribute="casesForm">
 	<table>
 	<tr>
 		<th>No.</th>

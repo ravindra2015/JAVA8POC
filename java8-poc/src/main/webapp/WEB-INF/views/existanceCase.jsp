@@ -1,7 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="s" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
-<%@ page session="false" %>
+<%@ page session="true" %>
 <c:if test="${!ajaxRequest}">
 <html>
 <head>
@@ -13,7 +13,8 @@
 </c:if>
 	<div id="formsContent">
 		<h2>Case Details</h2>
-		<form:form id="form" method="post" action="save.html" modelAttribute="existanceCaseBean" cssClass="cleanform">
+		<form:form id="form" method="post" action="displayList.html" name="ExistanceCase" modelAttribute="existanceCaseBean" cssClass="cleanform">
+		<%-- <form:form id="form" method="post" action="processForm.html" name="ExistanceCase" modelAttribute="existanceCaseBean" cssClass="cleanform"> --%>
 			<div class="header">
 
 		  		<c:if test="${not empty message}">
@@ -31,11 +32,6 @@
 		  			Reference Number <form:errors path="refNo" cssClass="error" />
 		 		</form:label>
 		  		<form:input path="refNo" />
-	
-		  		<form:label path="prodNo">
-		  			Product Number <form:errors path="prodNo" cssClass="error" />
-		 		</form:label>
-		  		<form:input path="prodNo" />
 		  		
 		  		<form:label path="callCenter">
 					Call Center
@@ -49,9 +45,10 @@
 	
 		  	</fieldset>
 	
-			<p><button type="submit">Submit</button></p>
+			<p>
+			<button type="submit">Submit</button> </p>
 		</form:form>
-		<script type="text/javascript">
+		<%-- <script type="text/javascript">
 			$(document).ready(function() {
 				$("#form").submit(function() {  
 					$.post($(this).attr("action"), $(this).serialize(), function(html) {
@@ -61,7 +58,7 @@
 					return false;  
 				});			
 			});
-		</script>
+		</script> --%>
 	</div>
 <c:if test="${!ajaxRequest}">
 </body>

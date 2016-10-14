@@ -13,7 +13,7 @@
 		<th>First Name</th>
 		<th>Last Name</th>
 		<th>Circumstance</th>
-		<th>Registration Number</th> 
+		<th><a href="<c:url value="/displayList"/>"> Registration Number</a></th>
 	</tr>
 	<c:forEach items="${casesForm.cases}" var="cases" varStatus="status">
 		<tr>
@@ -28,7 +28,6 @@
 <br/>
 <input type="button" value="Back" onclick="javascript:history.back()"/>
  <input type="button" value="Edit" onclick="location.href='/java8-poc/getlist'"/>
-  <input type="button" value="Home" onclick="location.href='/java8-poc/'"/>
-  <input type="button" value="Sort" onclick="location.href='/java8-poc/sorting'"/>
+ <input type="button" value="Home" onclick="location.href='/java8-poc/'"/>
 </body>
 </html>
