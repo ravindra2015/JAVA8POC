@@ -23,6 +23,7 @@
 	<ul>
 		<li><a href="#simple">Simple</a></li>
 		<li><a href="#broker">Broker Details</a></li>
+		<li><a href="#customer">Customer Details</a></li>
     </ul>
     <div id="simple">
 		<h2>Simple</h2>
@@ -47,6 +48,25 @@
 		<ul>
 			<li>
 				<a id="simpleLink" class="brokerLink" href="<c:url value="/broker" />">GET Broker</a>
+			</li>
+    	</ul>
+			
+	</div>
+	 <div id="customer">
+		<h2>Customer</h2>
+		<p>
+			Enter firstName or lastName and get Customer Details :
+		</p>
+		
+		<ul>
+			<li>
+				<a id="simpleLink" class="customerLink" href="<c:url value="/getCustomer" />">GET Customer</a>
+			</li>
+			<li>
+				<a id="simpleLink" class="customerLink" href="<c:url value="/customerform" />">SEARCH Customer</a>
+			</li>
+			<li>
+				<a id="simpleLink" class="customerLink" href="<c:url value="/sortCustomer" />">SORT Customer</a>
 			</li>
     	</ul>
 			
