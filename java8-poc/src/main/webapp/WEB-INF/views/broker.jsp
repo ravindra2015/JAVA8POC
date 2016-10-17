@@ -14,14 +14,14 @@
 	<div id="formsContent">
 		<h2>Broker Details</h2>
 		<p>
-			See the <code>org.springframework.samples.mvc.form</code> package for the @Controller code	
+			Get the Brokers Details on the Basis of Given Account No.
 		</p>
 		<form:form id="form" method="post" modelAttribute="brokerBean" cssClass="cleanform">
 		<div class="header">
 		  		<h2>Form</h2>
-		  		<c:if test="${not empty message}">
+		  		<%-- <c:if test="${not empty message}">
 					<div id="message" class="success">${message}</div>	
-		  		</c:if> 
+		  		</c:if> --%> 
 		  		<s:bind path="*">
 		  			<c:if test="${status.error}">
 				  		<div id="message" class="error">Form has errors</div>
@@ -30,7 +30,7 @@
 			</div>
 			<fieldset>
 		  		<legend>Broker Info</legend>
-		  		<form:label path="name">
+		  		<%-- <form:label path="name">
 		  			Name <form:errors path="name" cssClass="error" />
 		 		</form:label>
 		  		<form:input path="name" />
@@ -38,10 +38,10 @@
 		  		<form:label path="age">
 		  		Age <form:errors path="age" cssClass="error" />
 		 		</form:label>
-		  		<form:input path="age" />
+		  		<form:input path="age" /> --%>
 		  		
 		  		<form:label path="accountNo">
-		  			Account No <form:errors path="accountNo" cssClass="error" />
+		  			Bank Account No <form:errors path="accountNo" cssClass="error" />
 		 		</form:label>
 		  		<form:input size="15" path="accountNo" />
 		  		
@@ -58,7 +58,7 @@
 		
 			
 	
-			<p><button type="submit">Submit</button></p>
+			<p><button type="submit">Get Brokers</button></p>
 		</form:form>
 		<script type="text/javascript">
 			$(document).ready(function() {

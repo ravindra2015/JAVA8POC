@@ -19,7 +19,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-public class XmlParser {
+public class BrokerDetails {
 
     static NodeList nList1 = null;
     static Document basefile = null;
@@ -36,8 +36,6 @@ public class XmlParser {
 			if (accNo == null)
 	            return Collections.EMPTY_LIST;
 			accNo = accNo.replaceAll("-", "");
-	        if (accNo.length() < 4)
-	            return Collections.EMPTY_LIST;
 	        accNo = accNo.substring(0, 4);
 			
         	nList1 = basefile.getElementsByTagName("table-value");
@@ -58,8 +56,8 @@ public class XmlParser {
                     
                 }   
            }
-
-            System.out.println(nameList);
+		    nameList.forEach(System.out::println);
+		    
         } catch (SAXException | IOException e) {
             e.printStackTrace();
         }

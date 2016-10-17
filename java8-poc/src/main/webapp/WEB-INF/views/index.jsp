@@ -22,7 +22,7 @@
 <div id="tabs">
 	<ul>
 		<li><a href="#simple">Simple</a></li>
-		<li><a href="#broker">Broker Details</a></li>
+		<li><a href="<c:url value="/broker" />">Broker Details</a></li>
 		<li><a href="<c:url value="/existanceCase" />" title="existanceCase">Case Details</a></li>
 		<li><a href="<c:url value="/getlist" />" title="getlist">GET</a></li>
     </ul>
@@ -40,20 +40,7 @@
 			</li>
 		</ul>
 	</div>
-    <div id="broker">
-		<h2>Broker</h2>
-		<p>
-			Enter Bank account number and get Broker Details :
-		</p>
-		
-		<ul>
-			<li>
-				<a id="simpleLink" class="brokerLink" href="<c:url value="/broker" />">GET Broker</a>
-			</li>
-    	</ul>
-			
-	</div>
-	
+   	
 </div>
 <script type="text/javascript" src="<c:url value="/resources/jquery/1.6/jquery.js" />"></script>
 <script type="text/javascript" src="<c:url value="/resources/jqueryform/2.8/jquery.form.js" />"></script>
