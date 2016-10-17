@@ -66,6 +66,12 @@ public class Cases {
 			return regDate;
 		}
 
+		@Override
+		public String toString() {
+			return "Cases [refno=" + refno + ", firstname=" + firstname + ", lastname=" + lastname + ", circumstance="
+					+ circumstance + ", regDate=" + regDate + "]";
+		}
+
 		public void setRegDate(LocalDate regDate) {
 			this.regDate = regDate;
 		}
