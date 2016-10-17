@@ -62,14 +62,43 @@ public class CustomerController {
 		return new ModelAndView("viewCustomer", "foundCustomer", foundCustomer);
 	}
 	
-	@RequestMapping(value = "/sort", method = RequestMethod.POST)
+	@RequestMapping(value = "/sortByage", method = RequestMethod.GET)
 	public ModelAndView sortCustomer(@ModelAttribute("customer") Customer customer) {
 
-		List<Customer> customerSort = filterCustomer(
+		List<Customer> foundCustomer = filterCustomer(
 				customerList,
 				isAge(customer.getAge()));
-		Collections.sort(customerSort, ((o1, o2)->o1.getAge()-o2.getAge()));
+		Collections.sort(foundCustomer, ((o1, o2)->o1.getAge()-o2.getAge()));
 
-		return new ModelAndView("sortedCustomer", "customerSort", customerSort);
+		return new ModelAndView("viewCustomer", "foundCustomer", foundCustomer);
 	}
+	
+	@RequestMapping(value = "/sortByDate", method = RequestMethod.GET)
+	public ModelAndView sortCustomerByDate(@ModelAttribute("customer") Customer customer) {
+		
+		customerList.sort((Customer o1, Customer o2)->o1.getDateOfRegister().compareTo(o2.getDateOfRegister()));
+		return new ModelAndView("viewCustomer", "foundCustomer", customerList);
+	}
+	
+	@RequestMapping(value = "/sortByFirstName", method = RequestMethod.GET)
+	public ModelAndView sortCustomerByFirstName(@ModelAttribute("customer") Customer customer) {
+
+		customerList.sort((Customer o1, Customer o2)->o1.getFirstName().compareTo(o2.getFirstName()));
+		return new ModelAndView("viewCustomer", "foundCustomer", customerList);
+	}
+	
+	@RequestMapping(value = "/sortByLastName", method = RequestMethod.GET)
+	public ModelAndView sortCustomerByLastName(@ModelAttribute("customer") Customer customer) {
+
+		customerList.sort((Customer o1, Customer o2)->o1.getLastName().compareTo(o2.getLastName()));
+		return new ModelAndView("viewCustomer", "foundCustomer", customerList);
+	}
+	
+	@RequestMapping(value = "/sortByCity", method = RequestMethod.GET)
+	public ModelAndView sortCustomerByCity(@ModelAttribute("customer") Customer customer) {
+
+		customerList.sort((Customer o1, Customer o2)->o1.getCity().compareTo(o2.getCity()));
+		return new ModelAndView("viewCustomer", "foundCustomer", customerList);
+	}
+	
 }

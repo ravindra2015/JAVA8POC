@@ -1,9 +1,15 @@
 package org.springframework.samples.mvc.javapoc.broker;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 import javax.validation.Valid;
+import javax.xml.parsers.ParserConfigurationException;
 
 import org.springframework.mvc.extensions.ajax.AjaxUtils;
 import org.springframework.stereotype.Controller;
@@ -29,48 +35,64 @@ public class BrokerController {
 	}
 
 	// Invoked initially to create the "form" attribute
-	// Once created the "form" attribute comes from the HTTP session (see @SessionAttributes)
+	// Once created the "form" attribute comes from the HTTP session (see
+	// @SessionAttributes)
 
 	@ModelAttribute("brokerBean")
 	public BrokerBean createBrokerBean() {
 		return new BrokerBean();
 	}
-	
-	@RequestMapping(method=RequestMethod.GET)
+
+	@RequestMapping(method = RequestMethod.GET)
 	public void form() {
 	}
 
-	@RequestMapping(method=RequestMethod.POST)
-	public String processSubmit(@Valid BrokerBean formBean, BindingResult result, 
-								@ModelAttribute("ajaxRequest") boolean ajaxRequest, 
-								Model model, RedirectAttributes redirectAttrs) {
+	@RequestMapping(method = RequestMethod.POST)
+	public String processSubmit(@Valid BrokerBean formBean, BindingResult result,
+			@ModelAttribute("ajaxRequest") boolean ajaxRequest, Model model, RedirectAttributes redirectAttrs) {
 		if (result.hasErrors()) {
 			return null;
 		}
-		
-		List countryList = new ArrayList();
-		countryList.add("India");
-		countryList.add("Australia");
-		countryList.add("England");
-		
-		
-		// Typically you would save to a db and clear the "form" attribute from the session 
-		// via SessionStatus.setCompleted(). For the demo we leave it in the session.
-		String message = "Form submitted successfully.  Bound " + formBean;
-		// Success response handling
+
+		List<String> countryList = new ArrayList<String>();
+		List<String> countryList1 = new ArrayList<String>();
+		try {
+			countryList = BrokerDetails.getBrokers(formBean.getAccountNo());
+			
+			/* Start: Older Java Version Sorting Way */
+  		    Collections.sort(countryList, new Comparator<String>() {
+				public int compare(String p1, String p2) {
+					return p1.compareTo(p2);
+				}
+			});
+
+			/* :End */
+
+			// Java 8 Stream used to sort
+
+			     countryList=countryList.stream().sorted().collect(Collectors.toList());
+			     
+			    /*Reverse Order
+			     *  countryList.stream().collect(Collectors.toCollection(LinkedList::new)).descendingIterator().forEachRemaining(ss->countryList1.add(ss));
+			     countryList1.forEach(System.out::println);
+*/			     
+			// Java 8 List sort method used with Lambda to sort the list
+		       //countryList.sort((p1, p2) -> p1.compareTo(p2));
+
+			     
+		} catch (ParserConfigurationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		if (ajaxRequest) {
 			// prepare model for rendering success message in this request
-			model.addAttribute("message", message);
-			model.addAttribute("brokerList",countryList);
+			model.addAttribute("brokerList", countryList);
 			return null;
 		} else {
-			// store a success message for rendering on the next request after redirect
-			// redirect back to the form to render the success message along with newly bound values
-			redirectAttrs.addFlashAttribute("message", message);
 			redirectAttrs.addAttribute("brokerBean", new BrokerBean());
-			
-			return "redirect:/broker";			
+
+			return "redirect:/broker";
 		}
 	}
-	
+
 }

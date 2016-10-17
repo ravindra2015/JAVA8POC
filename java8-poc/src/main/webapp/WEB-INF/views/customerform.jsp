@@ -14,7 +14,9 @@
           <td><form:input path="lastName" /></td>  
          </tr>   
          <tr>    
-          <td colspan="2" align="center"><input type="button" value="Back" onclick="javascript:history.back()"/><input type="submit" value="Search" /></td>    
+          <td colspan="2" align="center">
+          <input type="button" value="Back" onclick="location.href='/java8-poc/'"/>
+          <input type="submit" value="Search" /></td>    
          </tr>    
         </table>    
        </form:form>    

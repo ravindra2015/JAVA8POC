@@ -1,0 +1,565 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XML Spy v4.3 U (http://www.xmlspy.com) by MR VANHONAKKER (BANKSYS) -->
+<lookup-table-response xmlns="http://www.banksys.be/cams" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.banksys.be/cams
+D:\development\cams\xsd\cams.xsd">
+	<table>
+		<table-name>Broker</table-name>
+		<table-value>
+			<key>001</key>
+			<value>01000</value>
+			<value field="name">ING Belgique</value>
+			<value field="from">3000</value>
+			<value field="to">3999</value>
+		</table-value>
+		<table-value>
+			<key>002</key>
+			<value>01000</value>
+			<value field="name">ING Belgique</value>
+			<value field="from">6300</value>
+			<value field="to">6319</value>
+		</table-value>
+		<table-value>
+			<key>003</key>
+			<value>02000</value>
+			<value field="name">DEXIA BANQUE</value>
+			<value field="from">0500</value>
+			<value field="to">0999</value>
+		</table-value>
+		<table-value>
+			<key>004</key>
+			<value>02000</value>
+			<value field="name">DEXIA BANQUE</value>
+			<value field="from">5500</value>
+			<value field="to">5699</value>
+		</table-value>
+		<table-value>
+			<key>005</key>
+			<value>02000</value>
+			<value field="name">DEXIA BANQUE</value>
+			<value field="from">7750</value>
+			<value field="to">7999</value>
+		</table-value>
+		<table-value>
+			<key>006</key>
+			<value>03000</value>
+			<value field="name">FORTIS BANQUE</value>
+			<value field="from">0010</value>
+			<value field="to">0499</value>
+		</table-value>
+		<table-value>
+			<key>007</key>
+			<value>03000</value>
+			<value field="name">FORTIS BANQUE</value>
+			<value field="from">1400</value>
+			<value field="to">1549</value>
+		</table-value>
+		<table-value>
+			<key>008</key>
+			<value>03000</value>
+			<value field="name">FORTIS BANQUE</value>
+			<value field="from">2000</value>
+			<value field="to">2939</value>
+		</table-value>
+		<table-value>
+			<key>009</key>
+			<value>06011</value>
+			<value field="name">AXA BANK BELGIUM</value>
+			<value field="from">7000</value>
+			<value field="to">7099</value>
+		</table-value>
+		<table-value>
+			<key>010</key>
+			<value>06011</value>
+			<value field="name">AXA BANK BELGIUM</value>
+			<value field="from">7500</value>
+			<value field="to">7749</value>
+		</table-value>
+		<table-value>
+			<key>011</key>
+			<value>06011</value>
+			<value field="name">AXA BANK BELGIUM</value>
+			<value field="from">8000</value>
+			<value field="to">8249</value>
+		</table-value>
+		<table-value>
+			<key>012</key>
+			<value>06011</value>
+			<value field="name">AXA BANK BELGIUM</value>
+			<value field="from">9630</value>
+			<value field="to">9639</value>
+		</table-value>
+		<table-value>
+			<key>013</key>
+			<value>06012</value>
+			<value field="name">KBC BANK</value>
+			<value field="from">4000</value>
+			<value field="to">4999</value>
+		</table-value>
+		<table-value>
+			<key>014</key>
+			<value>06012</value>
+			<value field="name">KBC BANK</value>
+			<value field="from">7250</value>
+			<value field="to">7499</value>
+		</table-value>
+		<table-value>
+			<key>015</key>
+			<value>06015</value>
+			<value field="name">CBC BANQUE</value>
+			<value field="from">1900</value>
+			<value field="to">1999</value>
+		</table-value>
+		<table-value>
+			<key>016</key>
+			<value>06015</value>
+			<value field="name">CBC BANQUE</value>
+			<value field="from">6620</value>
+			<value field="to">6629</value>
+		</table-value>
+		<table-value>
+			<key>017</key>
+			<value>06015</value>
+			<value field="name">CBC BANQUE</value>
+			<value field="from">7320</value>
+			<value field="to">7329</value>
+		</table-value>
+		<table-value>
+			<key>018</key>
+			<value>06015</value>
+			<value field="name">CBC BANQUE</value>
+			<value field="from">7420</value>
+			<value field="to">7429</value>
+		</table-value>
+		<table-value>
+			<key>019</key>
+			<value>06017</value>
+			<value field="name">VDK SPAARBANK</value>
+			<value field="from">8900</value>
+			<value field="to">8999</value>
+		</table-value>
+		<table-value>
+			<key>020</key>
+			<value>06022</value>
+			<value field="name">ARGENTA</value>
+			<value field="from">9780</value>
+			<value field="to">9799</value>
+		</table-value>
+		<table-value>
+			<key>021</key>
+			<value>06023</value>
+			<value field="name">CENTEA</value>
+			<value field="from">8500</value>
+			<value field="to">8699</value>
+		</table-value>
+		<table-value>
+			<key>022</key>
+			<value>06023</value>
+			<value field="name">CENTEA</value>
+			<value field="from">9070</value>
+			<value field="to">9079</value>
+		</table-value>
+		<table-value>
+			<key>023</key>
+			<value>06027</value>
+			<value field="name">RECORD BANK</value>
+			<value field="from">1850</value>
+			<value field="to">1859</value>
+		</table-value>
+		<table-value>
+			<key>024</key>
+			<value>06027</value>
+			<value field="name">RECORD BANK</value>
+			<value field="from">3000</value>
+			<value field="to">3939</value>
+		</table-value>
+		<table-value>
+			<key>025</key>
+			<value>06027</value>
+			<value field="name">RECORD BANK</value>
+			<value field="from">6520</value>
+			<value field="to">6529</value>
+		</table-value>
+		<table-value>
+			<key>026</key>
+			<value>06027</value>
+			<value field="name">RECORD BANK</value>
+			<value field="from">6730</value>
+			<value field="to">6739</value>
+		</table-value>
+		<table-value>
+			<key>027</key>
+			<value>06027</value>
+			<value field="name">RECORD BANK</value>
+			<value field="from">8800</value>
+			<value field="to">8899</value>
+		</table-value>
+		<table-value>
+			<key>028</key>
+			<value>06027</value>
+			<value field="name">RECORD BANK</value>
+			<value field="from">9200</value>
+			<value field="to">9299</value>
+		</table-value>
+		<table-value>
+			<key>029</key>
+			<value>06027</value>
+			<value field="name">RECORD BANK</value>
+			<value field="from">9610</value>
+			<value field="to">9619</value>
+		</table-value>
+		<table-value>
+			<key>030</key>
+			<value>06027</value>
+			<value field="name">RECORD BANK</value>
+			<value field="from">9700</value>
+			<value field="to">9719</value>
+		</table-value>
+		<table-value>
+			<key>031</key>
+			<value>06029</value>
+			<value field="name">DELTA LLOYD BANK</value>
+			<value field="from">1320</value>
+			<value field="to">1329</value>
+		</table-value>
+		<table-value>
+			<key>032</key>
+			<value>06029</value>
+			<value field="name">DELTA LLOYD BANK</value>
+			<value field="from">6340</value>
+			<value field="to">6369</value>
+		</table-value>
+		<table-value>
+			<key>033</key>
+			<value>06029</value>
+			<value field="name">DELTA LLOYD BANK</value>
+			<value field="from">6460</value>
+			<value field="to">6479</value>
+		</table-value>
+		<table-value>
+			<key>034</key>
+			<value>06029</value>
+			<value field="name">DELTA LLOYD BANK</value>
+			<value field="from">8700</value>
+			<value field="to">8729</value>
+		</table-value>
+		<table-value>
+			<key>035</key>
+			<value>06029</value>
+			<value field="name">DELTA LLOYD BANK</value>
+			<value field="from">8740</value>
+			<value field="to">8799</value>
+		</table-value>
+		<table-value>
+			<key>036</key>
+			<value>06034</value>
+			<value field="name">BANQUE DEGROOF</value>
+			<value field="from">6760</value>
+			<value field="to">6769</value>
+		</table-value>
+		<table-value>
+			<key>037</key>
+			<value>06035</value>
+			<value field="name">BANQUE DELEN &amp; DE SCHAETZEN</value>
+			<value field="from">6780</value>
+			<value field="to">6789</value>
+		</table-value>
+		<table-value>
+			<key>038</key>
+			<value>06040</value>
+			<value field="name">BANK J. VAN BREDA &amp; C°</value>
+			<value field="from">6450</value>
+			<value field="to">6459</value>
+		</table-value>
+		<table-value>
+			<key>039</key>
+			<value>06041</value>
+			<value field="name">BELGOLAISE</value>
+			<value field="from">6030</value>
+			<value field="to">6049</value>
+		</table-value>
+		<table-value>
+			<key>040</key>
+			<value>06043</value>
+			<value field="name">CREDIT PROFESSIONNEL S.A.</value>
+			<value field="from">1090</value>
+			<value field="to">1179</value>
+		</table-value>
+		<table-value>
+			<key>041</key>
+			<value>06043</value>
+			<value field="name">CREDIT PROFESSIONNEL S.A.</value>
+			<value field="from">1190</value>
+			<value field="to">1249</value>
+		</table-value>
+		<table-value>
+			<key>042</key>
+			<value>06043</value>
+			<value field="name">CREDIT PROFESSIONNEL S.A.</value>
+			<value field="from">1270</value>
+			<value field="to">1319</value>
+		</table-value>
+		<table-value>
+			<key>043</key>
+			<value>06043</value>
+			<value field="name">CREDIT PROFESSIONNEL S.A.</value>
+			<value field="from">1330</value>
+			<value field="to">1349</value>
+		</table-value>
+		<table-value>
+			<key>044</key>
+			<value>06046</value>
+			<value field="name">DEUTSCHE BANK S.A.</value>
+			<value field="from">6100</value>
+			<value field="to">6139</value>
+		</table-value>
+		<table-value>
+			<key>045</key>
+			<value>06046</value>
+			<value field="name">DEUTSCHE BANK S.A.</value>
+			<value field="from">6940</value>
+			<value field="to">6949</value>
+		</table-value>
+		<table-value>
+			<key>046</key>
+			<value>06046</value>
+			<value field="name">DEUTSCHE BANK S.A.</value>
+			<value field="from">6960</value>
+			<value field="to">6969</value>
+		</table-value>
+		<table-value>
+			<key>047</key>
+			<value>06046</value>
+			<value field="name">DEUTSCHE BANK S.A.</value>
+			<value field="from">8250</value>
+			<value field="to">8269</value>
+		</table-value>
+		<table-value>
+			<key>048</key>
+			<value>06047</value>
+			<value field="name">EURAL SPAARBANK</value>
+			<value field="from">9100</value>
+			<value field="to">9199</value>
+		</table-value>
+		<table-value>
+			<key>049</key>
+			<value>06047</value>
+			<value field="name">EURAL SPAARBANK</value>
+			<value field="from">9300</value>
+			<value field="to">9499</value>
+		</table-value>
+		<table-value>
+			<key>050</key>
+			<value>06050</value>
+			<value field="name">CREDIT AGRICOLE S.A.</value>
+			<value field="from">1030</value>
+			<value field="to">1089</value>
+		</table-value>
+		<table-value>
+			<key>051</key>
+			<value>06054</value>
+			<value field="name">SANTANDER CENTRAL HISPANO BENELUX</value>
+			<value field="from">5900</value>
+			<value field="to">5949</value>
+		</table-value>
+		<table-value>
+			<key>052</key>
+			<value>06056</value>
+			<value field="name">ETHIAS BANQUE</value>
+			<value field="from">6560</value>
+			<value field="to">6569</value>
+		</table-value>
+		<table-value>
+			<key>053</key>
+			<value>06056</value>
+			<value field="name">ETHIAS BANQUE</value>
+			<value field="from">8270</value>
+			<value field="to">8279</value>
+		</table-value>
+		<table-value>
+			<key>054</key>
+			<value>06056</value>
+			<value field="name">ETHIAS BANQUE</value>
+			<value field="from">9620</value>
+			<value field="to">9629</value>
+		</table-value>
+		<table-value>
+			<key>055</key>
+			<value>06056</value>
+			<value field="name">ETHIAS BANQUE</value>
+			<value field="from">9650</value>
+			<value field="to">9659</value>
+		</table-value>
+		<table-value>
+			<key>056</key>
+			<value>06057</value>
+			<value field="name">BANCO BILBAO VIZCAYA ARGENTARIA</value>
+			<value field="from">6420</value>
+			<value field="to">6429</value>
+		</table-value>
+		<table-value>
+			<key>057</key>
+			<value>06059</value>
+			<value field="name">ANTWERPS BEROEPSKREDIET</value>
+			<value field="from">1110</value>
+			<value field="to">1119</value>
+		</table-value>
+		<table-value>
+			<key>058</key>
+			<value>06065</value>
+			<value field="name">BANQUE CPH</value>
+			<value field="from">1250</value>
+			<value field="to">1269</value>
+		</table-value>
+		<table-value>
+			<key>059</key>
+			<value>06070</value>
+			<value field="name">F. VAN LANSCHOT BANKIERS</value>
+			<value field="from">5210</value>
+			<value field="to">5219</value>
+		</table-value>
+		<table-value>
+			<key>060</key>
+			<value>06072</value>
+			<value field="name">BANCA MONTE PASCHI BELGIO</value>
+			<value field="from">6430</value>
+			<value field="to">6439</value>
+		</table-value>
+		<table-value>
+			<key>061</key>
+			<value>06073</value>
+			<value field="name">KEYTRADE BANK</value>
+			<value field="from">6510</value>
+			<value field="to">6519</value>
+		</table-value>
+        <table-value>
+			<key>062</key>
+			<value>06076</value>
+			<value field="name">The Royal Bank of Scotland N.V., (Belgium) branch</value>
+			<value field="from">7200</value>
+			<value field="to">7209</value>
+		</table-value>
+		<table-value>
+			<key>063</key>
+			<value>06076</value>
+			<value field="name">The Royal Bank of Scotland N.V., (Belgium) branch</value>
+			<value field="from">7210</value>
+			<value field="to">7219</value>
+		</table-value>
+		<table-value>
+			<key>064</key>
+			<value>06076</value>
+			<value field="name">The Royal Bank of Scotland N.V., (Belgium) branch</value>
+			<value field="from">7230</value>
+			<value field="to">7239</value>
+		</table-value>
+		<table-value>
+			<key>065</key>
+			<value>06081</value>
+			<value field="name">BANQUE DE LA POSTE</value>
+			<value field="from">0000</value>
+			<value field="to">0009</value>
+		</table-value>
+		<table-value>
+			<key>066</key>
+			<value>06027</value>
+			<value field="name">RECORD BANK</value>
+			<value field="from">9100</value>
+			<value field="to">9199</value>
+		</table-value>
+		<table-value>
+			<key>067</key>
+			<value>06027</value>
+			<value field="name">RECORD BANK</value>
+			<value field="from">9300</value>
+			<value field="to">9499</value>
+		</table-value>
+		<table-value>
+			<key>068</key>
+			<value>06076</value>
+			<value field="name">The Royal Bank of Scotland N.V., (Belgium) branch</value>
+			<value field="from">7240</value>
+			<value field="to">7249</value>
+		</table-value>
+		<table-value>
+			<key>069</key>
+			<value>06084</value>
+			<value field="name">ABN AMRO (DIAMOND)</value>
+			<value field="from">6740</value>
+			<value field="to">6749</value>
+		</table-value>
+		<table-value>
+			<key>070</key>
+			<value>06084</value>
+			<value field="name">ABN AMRO (PC)</value>
+			<value field="from">5090</value>
+			<value field="to">5099</value>
+		</table-value>
+		<table-value>
+			<key>071</key>
+			<value>06085</value>
+			<value field="name">ABN-AMRO (PC)</value>
+			<value field="from">7220</value>
+			<value field="to">7229</value>
+		</table-value>
+		<table-value>
+			<key>072</key>
+			<value>06085</value>
+			<value field="name">ABN-AMRO (PC)</value>
+			<value field="from">7220</value>
+			<value field="to">7229</value>
+		</table-value>
+		
+		<table-value>
+			<key>073</key>
+			<value>06022</value>
+			<value field="name">ARGENTA</value>
+			<value field="from">9730</value>
+			<value field="to">9739</value>
+		</table-value>
+		<table-value>
+			<key>074</key>
+			<value>06086</value>
+			<value field="name">BELFIUS</value>
+			<value field="from">0500</value>
+			<value field="to">0999</value>
+		</table-value>
+		<table-value>
+			<key>075</key>
+			<value>06086</value>
+			<value field="name">BELFIUS</value>
+			<value field="from">5500</value>
+			<value field="to">5699</value>
+		</table-value>
+		<table-value>
+			<key>076</key>
+			<value>06086</value>
+			<value field="name">BELFIUS</value>
+			<value field="from">7750</value>
+			<value field="to">7999</value>
+		</table-value>
+		<table-value>
+			<key>077</key>
+			<value>06011</value>
+			<value field="name">AXA BANK BELGIUM</value>
+			<value field="from">9750</value>
+			<value field="to">9759</value>
+		</table-value>
+			
+		<table-value>
+			<key>998</key>
+			<value>00100</value>
+			<value field="name">BANK CARD COMPANY</value>
+			<value field="from">0000</value>
+			<value field="to">9999</value>
+		</table-value>
+		<table-value>
+			<key>999</key>
+			<value>06079</value>
+			<value field="name">KBC PINTO SYSTEMS</value>
+			<value field="from">0000</value>
+			<value field="to">9999</value>
+		</table-value>
+		
+		
+	</table>
+</lookup-table-response>

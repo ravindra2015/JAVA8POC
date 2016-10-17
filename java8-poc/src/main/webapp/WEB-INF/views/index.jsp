@@ -22,7 +22,8 @@
 <div id="tabs">
 	<ul>
 		<li><a href="#simple">Simple</a></li>
-		<li><a href="#broker">Broker Details</a></li>
+		<li><a href="<c:url value="/broker" />">Broker Details</a></li>
+		<li><a href="<c:url value="/existanceCase" />" title="existanceCase">Case Details</a></li>
 		<li><a href="#customer">Customer Details</a></li>
     </ul>
     <div id="simple">
@@ -39,24 +40,10 @@
 			</li>
 		</ul>
 	</div>
-    <div id="broker">
-		<h2>Broker</h2>
-		<p>
-			Enter Bank account number and get Broker Details :
-		</p>
-		
-		<ul>
-			<li>
-				<a id="simpleLink" class="brokerLink" href="<c:url value="/broker" />">GET Broker</a>
-			</li>
-    	</ul>
-			
-	</div>
-	 <div id="customer">
+	
+	
+	<div id="customer">
 		<h2>Customer</h2>
-		<p>
-			Enter firstName or lastName and get Customer Details :
-		</p>
 		
 		<ul>
 			<li>
@@ -65,13 +52,11 @@
 			<li>
 				<a id="simpleLink" class="customerLink" href="<c:url value="/customerform" />">SEARCH Customer</a>
 			</li>
-			<li>
-				<a id="simpleLink" class="customerLink" href="<c:url value="/sortCustomer" />">SORT Customer</a>
-			</li>
+<!-- 			<li> -->
+<%-- 				<a id="simpleLink" class="customerLink" href="<c:url value="/sortCustomer" />">SORT Customer</a> --%>
+<!-- 			</li> -->
     	</ul>
-			
 	</div>
-	
 </div>
 <script type="text/javascript" src="<c:url value="/resources/jquery/1.6/jquery.js" />"></script>
 <script type="text/javascript" src="<c:url value="/resources/jqueryform/2.8/jquery.form.js" />"></script>
@@ -116,55 +101,44 @@
 <script type="text/javascript">
 $(document).ready(function() {
 	$("#tabs").tabs();
-
 	// Append '#' to the window location so "Back" returns to the selected tab
 	// after a redirect or a full page refresh (e.g. Views tab).
-
 	// However, note this general disclaimer about going back to previous tabs: 
 	// http://docs.jquery.com/UI/API/1.8/Tabs#Back_button_and_bookmarking
-
 	$("#tabs").bind("tabsselect", function(event, ui) { window.location.hash = ui.tab.hash; });
-
-
 	$("a.textLink").click(function(){
 		var link = $(this);
 		$.ajax({ url: link.attr("href"), dataType: "text", success: function(text) { MvcUtil.showSuccessResponse(text, link); }, error: function(xhr) { MvcUtil.showErrorResponse(xhr.responseText, link); }});
 		return false;
 	});
-
 	$("a.utf8TextLink").click(function(){
 		var link = $(this);
 		$.ajax({ url: link.attr("href"), dataType: "text", beforeSend: function(req) { req.setRequestHeader("Accept", "text/plain;charset=UTF-8"); }, success: function(text) { MvcUtil.showSuccessResponse(text, link); }, error: function(xhr) { MvcUtil.showErrorResponse(xhr.responseText, link); }});
 		return false;
 	});
-
 	$("form.textForm").submit(function(event) {
 		var form = $(this);
 		var button = form.children(":first");
 		$.ajax({ type: "POST", url: form.attr("action"), data: "foo", contentType: "text/plain", dataType: "text", success: function(text) { MvcUtil.showSuccessResponse(text, button); }, error: function(xhr) { MvcUtil.showErrorResponse(xhr.responseText, button); }});
 		return false;
 	});
-
 	$("#readForm").submit(function() {
 		var form = $(this);
 		var button = form.children(":first");
 		$.ajax({ type: "POST", url: form.attr("action"), data: "foo=bar&fruit=apple", contentType: "application/x-www-form-urlencoded", dataType: "text", success: function(text) { MvcUtil.showSuccessResponse(text, button); }, error: function(xhr) { MvcUtil.showErrorResponse(xhr.responseText, button); }});
 		return false;
 	});
-
 	$("#writeForm").click(function() {
 		var link = $(this);
 		$.ajax({ url: this.href, dataType: "text", beforeSend: function(req) { req.setRequestHeader("Accept", "application/x-www-form-urlencoded"); }, success: function(form) { MvcUtil.showSuccessResponse(form, link); }, error: function(xhr) { MvcUtil.showErrorResponse(xhr.responseText, link); }});					
 		return false;
 	});
-
 	$("form.readXmlForm").submit(function() {
 		var form = $(this);
 		var button = form.children(":first");
 		$.ajax({ type: "POST", url: form.attr("action"), data: "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><javaBean><foo>bar</foo><fruit>apple</fruit></javaBean>", contentType: "application/xml", dataType: "text", success: function(text) { MvcUtil.showSuccessResponse(text, button); }, error: function(xhr) { MvcUtil.showErrorResponse(xhr.responseText, button); }});
 		return false;
 	});
-
 	$("a.writeXmlLink").click(function() {
 		var link = $(this);
 		$.ajax({ url: link.attr("href"),
@@ -182,7 +156,6 @@ $(document).ready(function() {
 		});
 		return false;
 	});					
-
 	$("form.readJsonForm").submit(function() {
 		var form = $(this);
 		var button = form.children(":first");
@@ -192,7 +165,6 @@ $(document).ready(function() {
 		$.ajax({ type: "POST", url: form.attr("action"), data: data, contentType: "application/json", dataType: "text", success: function(text) { MvcUtil.showSuccessResponse(text, button); }, error: function(xhr) { MvcUtil.showErrorResponse(xhr.responseText, button); }});
 		return false;
 	});
-
 	$("a.writeJsonLink").click(function() {
 		var link = $(this);
 		$.ajax({ url: this.href,
@@ -209,14 +181,12 @@ $(document).ready(function() {
 			}});
 		return false;
 	});
-
 	$("#readAtom").submit(function() {
 		var form = $(this);
 		var button = form.children(":first");
 		$.ajax({ type: "POST", url: form.attr("action"), data: '<?xml version="1.0" encoding="UTF-8"?> <feed xmlns="http://www.w3.org/2005/Atom"><title>My Atom feed</title></feed>', contentType: "application/atom+xml", dataType: "text", success: function(text) { MvcUtil.showSuccessResponse(text, button); }, error: function(xhr) { MvcUtil.showErrorResponse(xhr.responseText, button); }});
 		return false;
 	});
-
 	$("#writeAtom").click(function() {
 		var link = $(this);
 		$.ajax({ url: link.attr("href"),
@@ -239,7 +209,6 @@ $(document).ready(function() {
 		$.ajax({ type: "POST", url: form.attr("action"), data: '<?xml version="1.0" encoding="UTF-8"?> <rss version="2.0"><channel><title>My RSS feed</title></channel></rss>', contentType: "application/rss+xml", dataType: "text", success: function(text) { MvcUtil.showSuccessResponse(text, button); }, error: function(xhr) { MvcUtil.showErrorResponse(xhr.responseText, button); }});
 		return false;
 	});
-
 	$("#writeRss").click(function() {
 		var link = $(this);	
 		$.ajax({ url: link.attr("href"),
@@ -255,13 +224,11 @@ $(document).ready(function() {
 		});
 		return false;
 	});
-
 	$("#byHeader").click(function(){
 		var link = $(this);
 		$.ajax({ url: this.href, dataType: "text", beforeSend: function(req) { req.setRequestHeader("FooHeader", "foo"); }, success: function(form) { MvcUtil.showSuccessResponse(form, link); }, error: function(xhr) { MvcUtil.showErrorResponse(xhr.responseText, link); }});
 		return false;
 	});
-
 	// Include CSRF token as header in JQuery AJAX requests
 	// See http://docs.spring.io/spring-security/site/docs/3.2.x/reference/htmlsingle/#csrf-include-csrf-token-ajax
 	var token = $("meta[name='_csrf']").attr("content");
@@ -269,7 +236,6 @@ $(document).ready(function() {
 	$(document).ajaxSend(function(e, xhr, options) {
 		xhr.setRequestHeader(header, token);
 	});
-
 });
 </script>
 </body>
