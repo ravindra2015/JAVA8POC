@@ -9,7 +9,7 @@
 	<link href="<c:url value="/resources/jqueryui/1.8/themes/base/jquery.ui.core.css" />" rel="stylesheet" type="text/css"/>
 	<link href="<c:url value="/resources/jqueryui/1.8/themes/base/jquery.ui.theme.css" />" rel="stylesheet" type="text/css"/>
 	<link href="<c:url value="/resources/jqueryui/1.8/themes/base/jquery.ui.tabs.css" />" rel="stylesheet" type="text/css"/>
-	
+	 
 	<!--
 		Used for including CSRF token in JSON requests
 		Also see bottom of this file for adding CSRF token to JQuery AJAX requests
@@ -21,27 +21,11 @@
 <h1><a href="<c:url value="/" />">JAVA 8 POC</a></h1>
 <div id="tabs">
 	<ul>
-		<li><a href="#simple">Simple</a></li>
 		<li><a href="<c:url value="/broker" />">Broker Details</a></li>
 		<li><a href="<c:url value="/existanceCase" />" title="existanceCase">Case Details</a></li>
 		<li><a href="#customer">Customer Details</a></li>
     </ul>
-    <div id="simple">
-		<h2>Simple</h2>
-		<p>
-			See the <code>org.springframework.samples.mvc.simple</code> package for the @Controller code
-		</p>
-		<ul>
-			<li>
-				<a id="simpleLink" class="textLink" href="<c:url value="/simple" />">GET /simple</a>
-			</li>
-			<li>
-				<a id="simpleRevisited" class="textLink" href="<c:url value="/simple/revisited" />">GET /simple/revisited</a>
-			</li>
-		</ul>
-	</div>
-	
-	
+   
 	<div id="customer">
 		<h2>Customer</h2>
 		

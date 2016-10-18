@@ -1,4 +1,4 @@
-package org.springframework.samples.mvc.javapoc.ExistanceCase;
+package org.springframework.samples.mvc.javapoc.existingcases;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;

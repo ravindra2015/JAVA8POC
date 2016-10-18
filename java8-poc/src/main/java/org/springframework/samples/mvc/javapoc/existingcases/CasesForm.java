@@ -1,4 +1,4 @@
-package org.springframework.samples.mvc.javapoc.ExistanceCase;
+package org.springframework.samples.mvc.javapoc.existingcases;
 
 import java.util.List;
 
