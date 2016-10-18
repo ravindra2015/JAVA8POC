@@ -1,25 +1,14 @@
 package org.springframework.samples.mvc.javapoc.ExistanceCase;
 
-import static org.springframework.samples.mvc.javapoc.ExistanceCase.CasePredicate.isRegDatePresent;
-import static org.springframework.samples.mvc.javapoc.ExistanceCase.CasePredicate.filterCases;
-
-import java.awt.Button;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
-import java.util.Map;
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -92,7 +81,7 @@ public class CaseController {
 		return new ModelAndView("display_List", "casesForm", casesForm);
 	}
 	
-	@RequestMapping(value = "/sorting", method = RequestMethod.POST)
+	@RequestMapping(value = "/sorting", method = RequestMethod.GET)
 		public ModelAndView sorting() {
 
 		CasesForm casesForm = new CasesForm();
