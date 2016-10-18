@@ -24,17 +24,18 @@ public class BrokerDetails {
     static NodeList nList1 = null;
     static Document basefile = null;
     
-    public static List<String> getBrokers(String accNo) throws ParserConfigurationException {
+      public static List<String> getBrokers(String accNo) throws ParserConfigurationException {
 
         DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
         List<String> nameList=new ArrayList<>();
 		try {
-			String resourcePath ="C:/TRAINING/JAVA8POC/java8-poc/src/main/resources/lookupTableStub.xml";
-			basefile = docBuilder.parse(new File(resourcePath));
+		    String filename ="lookupTableStub.xml";
+			 File file = new File(new BrokerDetails().getClass().getClassLoader().getResource(filename).getFile());
+			basefile = docBuilder.parse(file);
 			basefile.normalizeDocument();
 			if (accNo == null)
-	            return Collections.EMPTY_LIST;
+	           return Collections.EMPTY_LIST;
 			accNo = accNo.replaceAll("-", "");
 	        accNo = accNo.substring(0, 4);
 			
