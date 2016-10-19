@@ -23,6 +23,7 @@ public class CustomerController {
 
 	private static List<Customer> customerList = Arrays.asList(
 			new Customer("Santosh", "Mali", 26, "Pune", LocalDate.of(2015, 5,15)),
+			new Customer("Avinash", "Renuakarya", 35, "Banglore", LocalDate.of(2010, 3,13)),
 			new Customer("Ravindra", "More", 28, "Mumbai", LocalDate.now()),
 			new Customer("Minal", "Karale", 29, "Akola", LocalDate.now().plusMonths(5)),
 			new Customer("Kedar", "Joshi", 30, "Kolhapur", LocalDate.of(2015, 5,15)),
@@ -45,9 +46,9 @@ public class CustomerController {
 	@RequestMapping(value = "/getCustomer", method = RequestMethod.GET)
 	public ModelAndView getlist(@ModelAttribute("customer") Customer customer) {
 
-		List<Customer> customerShow = customerList.stream().collect(Collectors.toList());
+		List<Customer> getCustomerList = customerList.stream().collect(Collectors.toList());
 
-		return new ModelAndView("customerList", "customerShow", customerShow);
+		return new ModelAndView("customerList", "getCustomerList", getCustomerList);
 	}
 
 	@RequestMapping(value = "/search", method = RequestMethod.POST)
@@ -57,12 +58,11 @@ public class CustomerController {
 				customerList,
 				isCustomerPresent(customer.getFirstName(),
 						customer.getLastName()));
-		Collections.sort(foundCustomer, (c1, c2) -> c1.getDateOfRegister().compareTo(c2.getDateOfRegister()));
 
 		return new ModelAndView("viewCustomer", "foundCustomer", foundCustomer);
 	}
 	
-	@RequestMapping(value = "/sortByage", method = RequestMethod.GET)
+	@RequestMapping(value = "/sortByAge", method = RequestMethod.GET)
 	public ModelAndView sortCustomer(@ModelAttribute("customer") Customer customer) {
 
 		List<Customer> foundCustomer = filterCustomer(
@@ -70,35 +70,35 @@ public class CustomerController {
 				isAge(customer.getAge()));
 		Collections.sort(foundCustomer, ((o1, o2)->o1.getAge()-o2.getAge()));
 
-		return new ModelAndView("viewCustomer", "foundCustomer", foundCustomer);
+		return new ModelAndView("customerList", "getCustomerList", foundCustomer);
 	}
 	
 	@RequestMapping(value = "/sortByDate", method = RequestMethod.GET)
 	public ModelAndView sortCustomerByDate(@ModelAttribute("customer") Customer customer) {
 		
 		customerList.sort((Customer o1, Customer o2)->o1.getDateOfRegister().compareTo(o2.getDateOfRegister()));
-		return new ModelAndView("viewCustomer", "foundCustomer", customerList);
+		return new ModelAndView("customerList", "getCustomerList", customerList);
 	}
 	
 	@RequestMapping(value = "/sortByFirstName", method = RequestMethod.GET)
 	public ModelAndView sortCustomerByFirstName(@ModelAttribute("customer") Customer customer) {
 
 		customerList.sort((Customer o1, Customer o2)->o1.getFirstName().compareTo(o2.getFirstName()));
-		return new ModelAndView("viewCustomer", "foundCustomer", customerList);
+		return new ModelAndView("customerList", "getCustomerList", customerList);
 	}
 	
 	@RequestMapping(value = "/sortByLastName", method = RequestMethod.GET)
 	public ModelAndView sortCustomerByLastName(@ModelAttribute("customer") Customer customer) {
 
 		customerList.sort((Customer o1, Customer o2)->o1.getLastName().compareTo(o2.getLastName()));
-		return new ModelAndView("viewCustomer", "foundCustomer", customerList);
+		return new ModelAndView("customerList", "getCustomerList", customerList);
 	}
 	
 	@RequestMapping(value = "/sortByCity", method = RequestMethod.GET)
 	public ModelAndView sortCustomerByCity(@ModelAttribute("customer") Customer customer) {
 
 		customerList.sort((Customer o1, Customer o2)->o1.getCity().compareTo(o2.getCity()));
-		return new ModelAndView("viewCustomer", "foundCustomer", customerList);
+		return new ModelAndView("customerList", "getCustomerList", customerList);
 	}
 	
 }

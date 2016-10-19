@@ -8,15 +8,15 @@
 <body>
 	<h2>Show Customers</h2>
 	<table width="50%" border="1">
-	<thead style="background-color: #bce8f1;">
+	<thead style="background-color: #D3D3D3;">
 		<tr>
-			<th align="left">First Name</th>
-			<th align="left">Last Name</th>
-			<th align="left">Age</th>
-			<th align="left">City</th>
-			<th align="left">Registration Date</th>
+			<th align="left" style="background-color: #bce8f1;"><a href="sortByFirstName">First Name</a></th>
+			<th align="left" style="background-color: #bce8f1;"><a href="sortByLastName">Last Name</a></th>
+			<th align="left" style="background-color: #bce8f1;"><a href="sortByAge">Age</a></th>
+			<th align="left" style="background-color: #bce8f1;"><a href="sortByCity">City</a></th>
+			<th align="left" style="background-color: #bce8f1;"><a href="sortByDate">Registration Date</a></th>
 		</tr>
-		<c:forEach items="${customerShow}" var="customer">
+		<c:forEach items="${getCustomerList}" var="customer">
 			<tr>
 				<td>${customer.firstName}</td>
 				<td>${customer.lastName}</td>
@@ -27,7 +27,7 @@
 		</c:forEach>
 		<tr>
    <td colspan="15">
-   <input type="button" value="Back" onclick="javascript:history.back()"/>
+  <input type="button" value="Back" onclick="location.href='/java8-poc/#customer'"/>
    </td>
    </tr>
 	</table>

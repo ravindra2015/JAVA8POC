@@ -15,7 +15,7 @@
          </tr>   
          <tr>    
           <td colspan="2" align="center">
-          <input type="button" value="Back" onclick="location.href='/java8-poc/'"/>
+          <input type="button" value="Back" onclick="location.href='/java8-poc/#customer'"/>
           <input type="submit" value="Search" /></td>    
          </tr>    
         </table>    

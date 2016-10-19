@@ -36,9 +36,6 @@
 			<li>
 				<a id="simpleLink" class="customerLink" href="<c:url value="/customerform" />">SEARCH Customer</a>
 			</li>
-<!-- 			<li> -->
-<%-- 				<a id="simpleLink" class="customerLink" href="<c:url value="/sortCustomer" />">SORT Customer</a> --%>
-<!-- 			</li> -->
     	</ul>
 	</div>
 </div>
