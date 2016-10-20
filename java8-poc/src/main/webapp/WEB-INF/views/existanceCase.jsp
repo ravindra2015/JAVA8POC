@@ -14,9 +14,7 @@
 	<div id="formsContent">
 		<h2>Case Details</h2>
 		<form:form id="form" method="post" action="displayList.html" name="ExistanceCase" modelAttribute="existanceCaseBean" cssClass="cleanform">
-		<%-- <form:form id="form" method="post" action="processForm.html" name="ExistanceCase" modelAttribute="existanceCaseBean" cssClass="cleanform"> --%>
 			<div class="header">
-
 		  		<c:if test="${not empty message}">
 					<div id="message" class="success">${message}</div>	
 		  		</c:if>
@@ -28,10 +26,10 @@
 			</div>
 		  	<fieldset>
 		  		<legend>Existance Case</legend>
-		  		<form:label path="refNo">
-		  			Reference Number <form:errors path="refNo" cssClass="error" />
+		  		<form:label path="refno">
+		  			Reference Number <form:errors path="refno" cssClass="error" />
 		 		</form:label>
-		  		<form:input path="refNo" />
+		  		<form:input path="refno" />
 		  		
 		  		<form:label path="callCenter">
 					Call Center
@@ -48,17 +46,6 @@
 			<p>
 			<button type="submit">Submit</button> </p>
 		</form:form>
-		<%-- <script type="text/javascript">
-			$(document).ready(function() {
-				$("#form").submit(function() {  
-					$.post($(this).attr("action"), $(this).serialize(), function(html) {
-						$("#formsContent").replaceWith(html);
-						$('html, body').animate({ scrollTop: $("#message").offset().top }, 500);
-					});
-					return false;  
-				});			
-			});
-		</script> --%>
 	</div>
 <c:if test="${!ajaxRequest}">
 </body>

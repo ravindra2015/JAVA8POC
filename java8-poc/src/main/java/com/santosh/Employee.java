@@ -10,9 +10,9 @@ public class Employee {
 		this.salary = salary;
 	}
 
+	@Override
 	public String toString() {
-		return "Employee First Name:" + this.firstName + "  LastName:"
-				+ this.lastName + "Employee Salary:" + this.salary;
+		return "\n["+this.firstName+","+this.lastName+","+this.salary+"]";
 	}
 
 	/**

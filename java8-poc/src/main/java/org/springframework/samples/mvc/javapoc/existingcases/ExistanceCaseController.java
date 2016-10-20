@@ -1,7 +1,5 @@
 package org.springframework.samples.mvc.javapoc.existingcases;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
 
 import javax.validation.Valid;
@@ -15,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.context.request.WebRequest;
-import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
@@ -71,11 +68,11 @@ public class ExistanceCaseController {
 //		if ("ExistanceCase".equals(button)){
 //	   
 //	}
-		casesForm.getCases().stream().filter(s-> s.getRefno().equals(formBean.getRefNo())).forEach(e -> System.out.println("List>>>>>>>>>>>>>" +e.getRegDate() + e.getFirstname()));
-		Optional stringToUse = Optional.of(formBean.getRefNo());
+		casesForm.getCases().stream().filter(s-> s.getRefno().equals(formBean.getRefno())).forEach(e -> System.out.println("List>>>>>>>>>>>>>" +e.getRegDate() + e.getFirstname()));
+		Optional stringToUse = Optional.of(formBean.getRefno());
 		if( stringToUse.isPresent())
 		{
-        casesForm.getCases().stream().filter(s-> s.getRefno().equals(formBean.getRefNo())).forEach(e -> System.out.println("List>>>>>>>>>>>>>" +e.getRegDate() + e.getFirstname()));
+        casesForm.getCases().stream().filter(s-> s.getRefno().equals(formBean.getRefno())).forEach(e -> System.out.println("List>>>>>>>>>>>>>" +e.getRegDate() + e.getFirstname()));
 		}
    
 //        return new ModelAndView("redirect:/displayList");//will redirect to viewemp request mapping  

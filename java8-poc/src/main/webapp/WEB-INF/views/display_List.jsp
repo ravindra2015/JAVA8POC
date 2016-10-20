@@ -7,17 +7,19 @@
 </head>
 <body>
 <h2>Show cases</h2>
-<table width="50%">
+<table border="2" width="70%" cellpadding="2">
 	<tr>
-		<th>Reference Number</th>
-		<th>First Name</th>
-		<th>Last Name</th>
-		<th>Circumstance</th>
-		<th> Registration Number</a></th>
+		<th align="left" style="background-color: #bce8f1;">Reference Number</th>
+		<th align="left" style="background-color: #bce8f1;">Call Center</th>
+		<th align="left" style="background-color: #bce8f1;">First Name</th>
+		<th align="left" style="background-color: #bce8f1;">Last Name</th>
+		<th align="left" style="background-color: #bce8f1;">Circumstance</th>
+		<th align="left" style="background-color: #bce8f1;">Registration Number</th>
 	</tr>
-	<c:forEach items="${casesForm.cases}" var="cases" varStatus="status">
+	<c:forEach items="${foundCases}" var="cases" varStatus="status">
 		<tr>
 			<td>${cases.refno}</td>
+			<td>${cases.callCenter}</td>
 			<td>${cases.firstname}</td>
 			<td>${cases.lastname}</td>
 			<td>${cases.circumstance}</td>
@@ -27,8 +29,5 @@
 </table>	
 <br/>
 <input type="button" value="Back" onclick="javascript:history.back()"/>
- <input type="button" value="Edit" onclick="location.href='/java8-poc/getlist'"/>
- <input type="button" value="Home" onclick="location.href='/java8-poc/'"/>
-  <input type="button" value="Sort" onclick="location.href='/java8-poc/sorting'"/>
 </body>
 </html>

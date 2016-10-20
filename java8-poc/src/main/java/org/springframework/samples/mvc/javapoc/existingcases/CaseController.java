@@ -1,5 +1,8 @@
 package org.springframework.samples.mvc.javapoc.existingcases;
 
+import static org.springframework.samples.mvc.javapoc.existingcases.CasePredicate.filterCases;
+import static org.springframework.samples.mvc.javapoc.existingcases.CasePredicate.isCasePresent;
+
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
@@ -18,18 +21,25 @@ public class CaseController {
 	static LocalDate today = LocalDate.now();
 	static LocalDate dummyDate = LocalDate.of(2013, 07, 02);
 
-	private static List<Cases> cases = new ArrayList<Cases>();
+	private static List<Cases> casesList = new ArrayList<Cases>();
 
 	static {
-		cases.add(new Cases("000IR3100VE", "Jenni", " Hartford", "20 20", LocalDate.of(2016, 07, 26)));
-		cases.add(new Cases("000IR31P4NR", "George", "Bush", "20 20", today.minus(1, ChronoUnit.YEARS)));
-		cases.add(new Cases("000IRUMFA88", "Bill", "Clinton", "10 11", today.minus(3, ChronoUnit.WEEKS)));
-		cases.add(new Cases("000ISH1Q2DC", "Ronald", "Reagan", "70 72", today.minusMonths(5)));
-		cases.add(new Cases("000ISH4L3MV", "Vannesa", " Morocco", "70 72", today.minusDays(20)));
-		cases.add(new Cases("000ISH56FIO", "Rubin", "Klingler", "20 22", dummyDate.plus(90, ChronoUnit.DAYS)));
-		cases.add(new Cases("000ISSGJOMX", "Royal", "Gelb", "10 14", dummyDate.plusYears(2)));
-		cases.add(new Cases("000ISTZ3T5B", "Ben", " Claar", "10 14", dummyDate.plusMonths(15)));
-
+		casesList.add(new Cases("000IR3100VE", "Jenni", " Hartford", "20 20",
+				LocalDate.of(2016, 07, 26),"AWL"));
+		casesList.add(new Cases("000IR31P4NR", "George", "Bush", "20 20", today
+				.minus(1, ChronoUnit.YEARS),"EXTERNAL"));
+		casesList.add(new Cases("000IRUMFA88", "Bill", "Clinton", "10 11", today
+				.minus(3, ChronoUnit.WEEKS),"OTHERS"));
+		casesList.add(new Cases("000ISH1Q2DC", "Ronald", "Reagan", "70 72", today
+				.minusMonths(5),"AWL"));
+		casesList.add(new Cases("000ISH4L3MV", "Vannesa", " Morocco", "70 72",
+				today.minusDays(20),"EXTERNAL"));
+		casesList.add(new Cases("000ISH56FIO", "Rubin", "Klingler", "20 22",
+				dummyDate.plus(90, ChronoUnit.DAYS),"OTHERS"));
+		casesList.add(new Cases("000ISSGJOMX", "Royal", "Gelb", "10 14", dummyDate
+				.plusYears(2),"OTHERS"));
+		casesList.add(new Cases("000ISTZ3T5B", "Ben", " Claar", "10 14", dummyDate
+				.plusMonths(15),"AWL"));
 	}
 
 	public CaseController() {
@@ -40,7 +50,7 @@ public class CaseController {
 	public ModelAndView getlist() {
 
 		CasesForm casesForm = new CasesForm();
-		casesForm.setCases(cases);
+		casesForm.setCases(casesList);
 		
 		return new ModelAndView("add_cases", "casesForm", casesForm);
 
@@ -53,7 +63,7 @@ public class CaseController {
 		List<Cases> cases = casesForm.getCases();
 
 		if (null != cases && cases.size() > 0) {
-			CaseController.cases = cases;
+			CaseController.casesList = cases;
 			for (Cases caseObj : cases) {
 				System.out.printf("%s \t %s \n", caseObj.getFirstname(), caseObj.getLastname());
 			}
@@ -65,27 +75,26 @@ public class CaseController {
 	@RequestMapping(value="/displayCase", method=RequestMethod.POST)
 	public ModelAndView displayList() {
 		CasesForm casesForm = new CasesForm();
-		casesForm.setCases(cases);
+		casesForm.setCases(casesList);
 		
 		return new ModelAndView("displayCase", "casesForm", casesForm);
 	}
 	
 	@RequestMapping(value = "/displayList", method = RequestMethod.POST)
-	public ModelAndView display() {
-		CasesForm casesForm = new CasesForm();
-		casesForm.setCases(cases);
-		
-		cases.stream().sorted((e1, e2) -> e1.getRegDate().compareTo(e2.getRegDate()))
-		.forEach(e -> System.out.println("Sorted List\n" +e.toString()));
+	public ModelAndView display(@ModelAttribute("existanceCase") Cases existanceCase) {
 
-		return new ModelAndView("display_List", "casesForm", casesForm);
+		List<Cases> foundCases = filterCases(
+				casesList, isCasePresent(existanceCase.getRefno(), existanceCase.getCallCenter()));
+
+
+		return new ModelAndView("display_List", "foundCases", foundCases);
 	}
 	
 	@RequestMapping(value = "/sorting", method = RequestMethod.GET)
 		public ModelAndView sorting() {
 
 		CasesForm casesForm = new CasesForm();
-		casesForm.setCases(cases);
+		casesForm.setCases(casesList);
 	
 	 		return new ModelAndView("sorting", "casesForm", casesForm);
 	 	}

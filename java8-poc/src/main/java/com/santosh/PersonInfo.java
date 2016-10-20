@@ -19,25 +19,26 @@ public class PersonInfo {
 	public static void main(String[] args) {
 
 		List<Person> personList = Stream
-				.of(new Person("Santosh", "Mali",new BigDecimal("3000")),
-						new Person("Sushil", "Bora",new BigDecimal("5000")),
+				.of(new Person("Santosh", "Mali",new BigDecimal("38000")),
+						new Person("Sushil", "Bora",new BigDecimal("50000")),
 						new Person("Badrinath", "Ajabe",new BigDecimal("13000")),
-						new Person("Santosh", "Mali",new BigDecimal("15000")),
+						new Person("Suraj", "Mali",new BigDecimal("15000")),
 						new Person("Shankar", "Ajabe",new BigDecimal("31000")),
 						new Person("Pradeep", "Bhapkar",new BigDecimal("33000")),
 						new Person("Shailesh", "Firangey",new BigDecimal("35000")),
-						new Person("Suraj", "Chordia",new BigDecimal("8000")),
-						new Person("Avinash", "Gawade",new BigDecimal("3500"))).collect(
+						new Person("Suraj", "Chordia",new BigDecimal("34000")),
+						new Person("Avinash", "Gawade",new BigDecimal("35000")),
+						new Person("Santosh", "Kumar",new BigDecimal("35000"))).collect(
 						Collectors.toList());
 
-		// System.out.println("List of Person's are:-");
-		// personList.forEach(System.out::println");
-		List<Person> foundObjs = personList
-				.stream()
-				.filter(person -> person.getFirstName().equalsIgnoreCase(
-						"Satish"))
-						.distinct()
-						.collect(Collectors.toList());
+		//Using method reference static method
+		 System.out.println("List of Person's are:-");
+		 personList.forEach(System.out::println);
+		 
+		 
+		  List<Person> foundObjs = personList
+				                 .stream()
+						         .collect(Collectors.toList());
 
 		if (null != foundObjs) {
 			System.out.println("Searched Person is:");
